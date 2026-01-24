@@ -1,6 +1,6 @@
 
 property serverInfo : Object
-property protocolVersion : Variant
+property protocolVersion : Text
 property capabilities : Object
 
 Class extends Result

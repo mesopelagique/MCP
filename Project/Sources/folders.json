@@ -22,11 +22,10 @@
 	},
 	"Tests": {
 		"methods": [
-			"launch",
-			"test_mcp_client",
-			"test_mcp_client_async",
 			"test_mcp_http",
-			"test_mcp_http_async"
+			"test_mcp_http_async",
+			"test_mcp_stdio",
+			"test_mcp_stdio_async"
 		],
 		"classes": [
 			"_MCPTestSignal"
