@@ -1,0 +1,761 @@
+{
+	"_method_": {},
+	"cs.MCP": {
+		"TransportHttp": {
+			"new()": {
+				"Syntax": "**.new**( *url* : Text; *options* : Object )",
+				"Params": [
+					[
+						"url",
+						"Text",
+						"->"
+					],
+					[
+						"options",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"ListPromptsResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"Result": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"InitializeResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"ReadResourceResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"TransportStdIO": {
+			"new()": {
+				"Syntax": "**.new**( *command* : Text; *options* : Object )",
+				"Params": [
+					[
+						"command",
+						"Text",
+						"->"
+					],
+					[
+						"options",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"Transport": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"GetPromptResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"_Env": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"Client": {
+			"new()": {
+				"Syntax": "**.new**( *transport* : Variant; *clientInfo* : Object )",
+				"Params": [
+					[
+						"transport",
+						"Variant",
+						"->"
+					],
+					[
+						"clientInfo",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"ListResourcesResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"ToolCallResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"ListResourceTemplatesResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"ListToolsResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"_MCPTestSignal": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		}
+	},
+	"TransportHttp": {
+		"get protocolVersion()": {
+			"Syntax": "**.get protocolVersion**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"get sessionId()": {
+			"Syntax": "**.get sessionId**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"close()": {
+			"Syntax": "**.close**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"notify()": {
+			"Syntax": "**.notify**( *notification* : cs.JSONRPC.Notification )",
+			"Params": [
+				[
+					"notification",
+					"cs.JSONRPC.Notification",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"send()": {
+			"Syntax": "**.send**( *message* : cs.JSONRPC.Request; *formula* : 4D.Function ) : cs.MCP.Result",
+			"Params": [
+				[
+					"message",
+					"cs.JSONRPC.Request",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Result",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"_inheritedFrom_": "Transport"
+	},
+	"ListPromptsResult": {
+		"prompts": {
+			"Syntax": "prompts : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"Result": {
+		"error": {
+			"Syntax": "error : Object"
+		},
+		"rawResponse": {
+			"Syntax": "rawResponse : Object"
+		},
+		"success": {
+			"Syntax": "success : Boolean"
+		}
+	},
+	"InitializeResult": {
+		"capabilities": {
+			"Syntax": "capabilities : Object"
+		},
+		"protocolVersion": {
+			"Syntax": "protocolVersion : Text"
+		},
+		"serverInfo": {
+			"Syntax": "serverInfo : Object"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"ReadResourceResult": {
+		"blob()": {
+			"Syntax": "**.blob**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"text()": {
+			"Syntax": "**.text**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"contents": {
+			"Syntax": "contents : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"TransportStdIO": {
+		"notify()": {
+			"Syntax": "**.notify**( *notification* : cs.JSONRPC.Notification )",
+			"Params": [
+				[
+					"notification",
+					"cs.JSONRPC.Notification",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"close()": {
+			"Syntax": "**.close**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"send()": {
+			"Syntax": "**.send**( *message* : cs.JSONRPC.Request; *formula* : 4D.Function ) : cs.MCP.Result",
+			"Params": [
+				[
+					"message",
+					"cs.JSONRPC.Request",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Result",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"_inheritedFrom_": "Transport"
+	},
+	"Transport": {
+		"close()": {
+			"Syntax": "**.close**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"notify()": {
+			"Syntax": "**.notify**( *notification* : cs.JSONRPC.Notification )",
+			"Params": [
+				[
+					"notification",
+					"cs.JSONRPC.Notification",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"send()": {
+			"Syntax": "**.send**( *message* : cs.JSONRPC.Request; *formula* : 4D.Function ) : cs.MCP.Result",
+			"Params": [
+				[
+					"message",
+					"cs.JSONRPC.Request",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Result",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"GetPromptResult": {
+		"messages": {
+			"Syntax": "messages : Collection"
+		},
+		"description": {
+			"Syntax": "description : Text"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"_Env": {},
+	"Client": {
+		"close()": {
+			"Syntax": "**.close**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"sendCancelled()": {
+			"Syntax": "**.sendCancelled**( *requestId* : Variant; *reason* : Text )",
+			"Params": [
+				[
+					"requestId",
+					"Variant",
+					"->"
+				],
+				[
+					"reason",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"setLoggingLevel()": {
+			"Syntax": "**.setLoggingLevel**( *level* : Text; *formula* : 4D.Function ) : cs.MCP.Result",
+			"Params": [
+				[
+					"level",
+					"Text",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Result",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getPrompt()": {
+			"Syntax": "**.getPrompt**( *name* : Text; *arguments* : Object; *formula* : 4D.Function ) : cs.MCP.GetPromptResult",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"arguments",
+					"Object",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.GetPromptResult",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"listPrompts()": {
+			"Syntax": "**.listPrompts**( *formula* : 4D.Function ) : cs.MCP.ListPromptsResult",
+			"Params": [
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.ListPromptsResult",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"listResources()": {
+			"Syntax": "**.listResources**( *formula* : 4D.Function ) : cs.MCP.ListResourcesResult",
+			"Params": [
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.ListResourcesResult",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"unsubscribeResource()": {
+			"Syntax": "**.unsubscribeResource**( *uri* : Text; *formula* : 4D.Function ) : cs.MCP.Result",
+			"Params": [
+				[
+					"uri",
+					"Text",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Result",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"complete()": {
+			"Syntax": "**.complete**( *ref* : Object; *argument* : Object; *formula* : 4D.Function ) : cs.MCP.Result",
+			"Params": [
+				[
+					"ref",
+					"Object",
+					"->"
+				],
+				[
+					"argument",
+					"Object",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Result",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"subscribeResource()": {
+			"Syntax": "**.subscribeResource**( *uri* : Text; *formula* : 4D.Function ) : cs.MCP.Result",
+			"Params": [
+				[
+					"uri",
+					"Text",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Result",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"sendProgress()": {
+			"Syntax": "**.sendProgress**( *progressToken* : Variant; *progress* : Real; *total* : Real )",
+			"Params": [
+				[
+					"progressToken",
+					"Variant",
+					"->"
+				],
+				[
+					"progress",
+					"Real",
+					"->"
+				],
+				[
+					"total",
+					"Real",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"listResourceTemplates()": {
+			"Syntax": "**.listResourceTemplates**( *formula* : 4D.Function ) : cs.MCP.ListResourceTemplatesResult",
+			"Params": [
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.ListResourceTemplatesResult",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"callTool()": {
+			"Syntax": "**.callTool**( *name* : Text; *arguments* : Object; *formula* : 4D.Function ) : cs.MCP.ToolCallResult",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"arguments",
+					"Object",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.ToolCallResult",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"readResource()": {
+			"Syntax": "**.readResource**( *uri* : Text; *formula* : 4D.Function ) : cs.MCP.ReadResourceResult",
+			"Params": [
+				[
+					"uri",
+					"Text",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.ReadResourceResult",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"listTools()": {
+			"Syntax": "**.listTools**( *formula* : 4D.Function ) : cs.MCP.ListToolsResult",
+			"Params": [
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.ListToolsResult",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"sendRootsListChanged()": {
+			"Syntax": "**.sendRootsListChanged**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"ping()": {
+			"Syntax": "**.ping**( *formula* : 4D.Function ) : cs.MCP.Result",
+			"Params": [
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Result",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"initialize()": {
+			"Syntax": "**.initialize**( *formula* : 4D.Function ) : cs.MCP.InitializeResult",
+			"Params": [
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.InitializeResult",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"transport": {
+			"Syntax": "transport : cs.MCP.Transport"
+		}
+	},
+	"ListResourcesResult": {
+		"resources": {
+			"Syntax": "resources : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"Tool": {
+		"inputSchema": {
+			"Syntax": "inputSchema : Variant"
+		},
+		"description": {
+			"Syntax": "description : Text"
+		},
+		"name": {
+			"Syntax": "name : Text"
+		}
+	},
+	"ToolCallResult": {
+		"data()": {
+			"Syntax": "**.data**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"text()": {
+			"Syntax": "**.text**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isError": {
+			"Syntax": "isError : Boolean"
+		},
+		"content": {
+			"Syntax": "content : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"ListResourceTemplatesResult": {
+		"resourceTemplates": {
+			"Syntax": "resourceTemplates : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"ListToolsResult": {
+		"tools": {
+			"Syntax": "tools : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"_MCPTestSignal": {
+		"trigger()": {
+			"Syntax": "**.trigger**( *result* : cs.MCP.Result )",
+			"Params": [
+				[
+					"result",
+					"cs.MCP.Result",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"wait()": {
+			"Syntax": "**.wait**( *time* : Integer )",
+			"Params": [
+				[
+					"time",
+					"Integer",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"reset()": {
+			"Syntax": "**.reset**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"init()": {
+			"Syntax": "**.init**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"signal": {
+			"Syntax": "signal : 4D.Signal"
+		},
+		"result": {
+			"Syntax": "result : cs.MCP.Result"
+		}
+	}
+}

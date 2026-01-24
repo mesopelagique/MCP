@@ -1,0 +1,48 @@
+{
+	"Models": {
+		"groups": [
+			"Results"
+		],
+		"classes": [
+			"Tool"
+		]
+	},
+	"Results": {
+		"classes": [
+			"GetPromptResult",
+			"InitializeResult",
+			"ListPromptsResult",
+			"ListResourcesResult",
+			"ListResourceTemplatesResult",
+			"ListToolsResult",
+			"ReadResourceResult",
+			"Result",
+			"ToolCallResult"
+		]
+	},
+	"Tests": {
+		"methods": [
+			"launch",
+			"test_mcp_client",
+			"test_mcp_client_async",
+			"test_mcp_http",
+			"test_mcp_http_async"
+		],
+		"classes": [
+			"_MCPTestSignal"
+		]
+	},
+	"Transport": {
+		"classes": [
+			"Transport",
+			"TransportHttp",
+			"TransportStdIO"
+		]
+	},
+	"Utils": {
+		"classes": [
+			"_Env"
+		]
+	},
+	"trash": {}
+}
