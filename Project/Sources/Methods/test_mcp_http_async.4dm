@@ -8,7 +8,7 @@
 //     $url := "https://api.githubcopilot.com/mcp/"
 //     $token := "your-oauth-token"
 
-var $url : Text:=""  // Set your MCP HTTP server URL
+var $url : Text:="https://api.githubcopilot.com/mcp/"  // Set your MCP HTTP server URL
 var $token : Text:=""  // Set your auth token if needed
 
 // Skip test if URL not configured
