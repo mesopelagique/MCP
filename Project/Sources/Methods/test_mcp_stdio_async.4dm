@@ -8,7 +8,7 @@ var $client:=cs:C1710.Client.new($transport)
 // Use CALL WORKER to avoid deadlock (callback routes to caller thread which would be blocked)
 cs:C1710._MCPTestSignal.me.init()
 
-CALL WORKER:C1389(Current method name:C684; Formula:C1597($client.toolList(Formula:C1597(cs:C1710._MCPTestSignal.me.trigger($1)))))
+CALL WORKER:C1389(Current method name:C684; Formula:C1597($client.listTools(Formula:C1597(cs:C1710._MCPTestSignal.me.trigger($1)))))
 
 cs:C1710._MCPTestSignal.me.wait(10000)
 
@@ -24,7 +24,7 @@ cs:C1710._MCPTestSignal.me.reset()
 // MARK: - Async toolCall
 cs:C1710._MCPTestSignal.me.init()
 
-CALL WORKER:C1389(Current method name:C684; Formula:C1597($client.toolCall("search_repositories"; {query: "4d-go-mobile"; perPage: 3}; Formula:C1597(cs:C1710._MCPTestSignal.me.trigger($1)))))
+CALL WORKER:C1389(Current method name:C684; Formula:C1597($client.callTool("search_repositories"; {query: "4d-go-mobile"; perPage: 3}; Formula:C1597(cs:C1710._MCPTestSignal.me.trigger($1)))))
 
 cs:C1710._MCPTestSignal.me.wait(10000)
 
