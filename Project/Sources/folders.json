@@ -1,9 +1,9 @@
 {
 	"Config": {
 		"classes": [
-			"MCPConfigLoader",
-			"MCPServerConfig",
-			"MCPServerRegistry"
+			"ConfigLoader",
+			"ServerConfig",
+			"ServerRegistry"
 		]
 	},
 	"Models": {

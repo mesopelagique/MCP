@@ -1,4 +1,4 @@
-// MCPServerRegistry
+// ServerRegistry
 // Singleton registry for discovered MCP servers with lazy client creation
 // Loads configs from Claude Desktop and VSCode, creates clients on demand
 
@@ -17,12 +17,12 @@ singleton Class constructor
 
 // Reload all configurations from well-known files
 Function reload()
-	var $result : Object:=cs:C1710.MCPConfigLoader.me.loadAll()
+	var $result : Object:=cs:C1710.ConfigLoader.me.loadAll()
 
 	This:C1470._servers:=New object:C1471
 	This:C1470._lastLoadErrors:=$result.errors
 
-	var $config : cs:C1710.MCPServerConfig
+	var $config : cs:C1710.ServerConfig
 	For each ($config; $result.servers)
 		This:C1470._servers[$config.name]:=$config
 	End for each
@@ -37,7 +37,7 @@ Function listServers() : Collection
 	return $names.sort()
 
 // Get configuration for a specific server
-Function getServerConfig($name : Text) : cs:C1710.MCPServerConfig
+Function getServerConfig($name : Text) : cs:C1710.ServerConfig
 	return This:C1470._servers[$name]
 
 // Get all server configurations
@@ -53,7 +53,7 @@ Function getAllConfigs() : Collection
 Function getServersBySource($source : Text) : Collection
 	var $configs : Collection:=New collection:C1472
 	var $name : Text
-	var $config : cs:C1710.MCPServerConfig
+	var $config : cs:C1710.ServerConfig
 	For each ($name; This:C1470._servers)
 		$config:=This:C1470._servers[$name]
 		If ($config.source=$source)
@@ -98,7 +98,7 @@ Function getClient($name : Text; $clientInfo : Object) : cs:C1710.Client
 	End if
 
 	// Create new client
-	var $config : cs:C1710.MCPServerConfig:=This:C1470._servers[$name]
+	var $config : cs:C1710.ServerConfig:=This:C1470._servers[$name]
 	var $client : cs:C1710.Client:=$config.createClient($clientInfo)
 
 	If ($client#Null:C1517)
@@ -129,7 +129,7 @@ Function closeAllClients()
 // ==============================================================================
 
 // Register a server configuration manually
-Function registerServer($config : cs:C1710.MCPServerConfig)
+Function registerServer($config : cs:C1710.ServerConfig)
 	This:C1470._servers[$config.name]:=$config
 
 // Register server from object
@@ -138,7 +138,7 @@ Function registerServerFromObject($name : Text; $configObj : Object)
 	If ($configObj.source=Null:C1517)
 		$configObj.source:="custom"
 	End if
-	This:C1470._servers[$name]:=cs:C1710.MCPServerConfig.new($configObj)
+	This:C1470._servers[$name]:=cs:C1710.ServerConfig.new($configObj)
 
 // Unregister a server
 Function unregisterServer($name : Text)

@@ -1,4 +1,4 @@
-// MCPServerConfig
+// ServerConfig
 // Configuration for a single MCP server from well-known config files
 
 property name : Text
@@ -97,12 +97,12 @@ Function toObject() : Object
 // ==============================================================================
 
 // Add a header (modifies in place, returns This for chaining)
-Function addHeader($key : Text; $value : Text) : cs:C1710.MCPServerConfig
+Function addHeader($key : Text; $value : Text) : cs:C1710.ServerConfig
 	This:C1470.headers[$key]:=$value
 	return This:C1470
 
 // Add multiple headers (modifies in place, returns This for chaining)
-Function addHeaders($headers : Object) : cs:C1710.MCPServerConfig
+Function addHeaders($headers : Object) : cs:C1710.ServerConfig
 	var $key : Text
 	For each ($key; $headers)
 		This:C1470.headers[$key]:=$headers[$key]
@@ -110,14 +110,14 @@ Function addHeaders($headers : Object) : cs:C1710.MCPServerConfig
 	return This:C1470
 
 // Return a copy with an added header (immutable)
-Function withHeader($key : Text; $value : Text) : cs:C1710.MCPServerConfig
-	var $copy : cs:C1710.MCPServerConfig:=This:C1470._copy()
+Function withHeader($key : Text; $value : Text) : cs:C1710.ServerConfig
+	var $copy : cs:C1710.ServerConfig:=This:C1470._copy()
 	$copy.headers[$key]:=$value
 	return $copy
 
 // Return a copy with added headers (immutable)
-Function withHeaders($headers : Object) : cs:C1710.MCPServerConfig
-	var $copy : cs:C1710.MCPServerConfig:=This:C1470._copy()
+Function withHeaders($headers : Object) : cs:C1710.ServerConfig
+	var $copy : cs:C1710.ServerConfig:=This:C1470._copy()
 	var $key : Text
 	For each ($key; $headers)
 		$copy.headers[$key]:=$headers[$key]
@@ -125,19 +125,19 @@ Function withHeaders($headers : Object) : cs:C1710.MCPServerConfig
 	return $copy
 
 // Add an environment variable (modifies in place, returns This for chaining)
-Function addEnv($key : Text; $value : Text) : cs:C1710.MCPServerConfig
+Function addEnv($key : Text; $value : Text) : cs:C1710.ServerConfig
 	This:C1470.env[$key]:=$value
 	return This:C1470
 
 // Return a copy with an added env var (immutable)
-Function withEnv($key : Text; $value : Text) : cs:C1710.MCPServerConfig
-	var $copy : cs:C1710.MCPServerConfig:=This:C1470._copy()
+Function withEnv($key : Text; $value : Text) : cs:C1710.ServerConfig
+	var $copy : cs:C1710.ServerConfig:=This:C1470._copy()
 	$copy.env[$key]:=$value
 	return $copy
 
 // Create a deep copy of this config
-Function _copy() : cs:C1710.MCPServerConfig
-	return cs:C1710.MCPServerConfig.new(New object:C1471(\
+Function _copy() : cs:C1710.ServerConfig
+	return cs:C1710.ServerConfig.new(New object:C1471(\
 		"name"; This:C1470.name; \
 		"type"; This:C1470.type; \
 		"command"; This:C1470.command; \

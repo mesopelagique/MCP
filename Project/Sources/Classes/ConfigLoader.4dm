@@ -1,4 +1,4 @@
-// MCPConfigLoader
+// ConfigLoader
 // Singleton that loads MCP server configurations from well-known config files
 // Supports: Claude Desktop, VSCode User Settings, VSCode Workspace Settings, VSCode mcp.json
 
@@ -9,7 +9,7 @@ singleton Class constructor
 	// ==============================================================================
 	
 	// Load all configurations from all known sources
-	// Returns: Object with { servers: Collection of MCPServerConfig, errors: Collection }
+	// Returns: Object with { servers: Collection of ServerConfig, errors: Collection }
 Function loadAll() : Object
 	var $result : Object:=New object:C1471("servers"; New collection:C1472; "errors"; New collection:C1472)
 	
@@ -72,7 +72,7 @@ Function loadClaudeConfig() : Object
 			var $serverConfig : Object:=OB Copy:C1225($mcpServers[$serverName])
 			$serverConfig.name:=$serverName
 			$serverConfig.source:="claude"
-			$result.servers.push(cs:C1710.MCPServerConfig.new($serverConfig))
+			$result.servers.push(cs:C1710.ServerConfig.new($serverConfig))
 		End for each 
 	End if 
 	
@@ -172,7 +172,7 @@ Function _parseMcpJson($path : 4D:C1709.File; $source : Text) : Object
 		var $serverConfig : Object:=OB Copy:C1225($servers[$serverName])
 		$serverConfig.name:=$serverName
 		$serverConfig.source:=$source
-		$result.servers.push(cs:C1710.MCPServerConfig.new($serverConfig))
+		$result.servers.push(cs:C1710.ServerConfig.new($serverConfig))
 	End for each
 
 	return $result
@@ -211,7 +211,7 @@ Function _parseVSCodeSettings($path : 4D:C1709.File; $source : Text) : Object
 		var $serverConfig : Object:=OB Copy:C1225($servers[$serverName])
 		$serverConfig.name:=$serverName
 		$serverConfig.source:=$source
-		$result.servers.push(cs:C1710.MCPServerConfig.new($serverConfig))
+		$result.servers.push(cs:C1710.ServerConfig.new($serverConfig))
 	End for each 
 	
 	return $result

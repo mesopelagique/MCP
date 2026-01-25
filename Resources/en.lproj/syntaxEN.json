@@ -139,14 +139,21 @@
 				"Summary": ""
 			}
 		},
-		"MCPServerRegistry": {
+		"ConfigLoader": {
 			"new()": {
 				"Syntax": "**.new**()",
 				"Params": [],
 				"Summary": ""
 			}
 		},
-		"MCPServerConfig": {
+		"ServerRegistry": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"ServerConfig": {
 			"new()": {
 				"Syntax": "**.new**( *config* : Object )",
 				"Params": [
@@ -156,13 +163,6 @@
 						"->"
 					]
 				],
-				"Summary": ""
-			}
-		},
-		"MCPConfigLoader": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
 				"Summary": ""
 			}
 		}
@@ -796,7 +796,64 @@
 			"Syntax": "result : cs.MCP.Result"
 		}
 	},
-	"MCPServerRegistry": {
+	"ConfigLoader": {
+		"loadVSCodeMcpJson()": {
+			"Syntax": "**.loadVSCodeMcpJson**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadClaudeConfig()": {
+			"Syntax": "**.loadClaudeConfig**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadVSCodeWorkspaceConfig()": {
+			"Syntax": "**.loadVSCodeWorkspaceConfig**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadAll()": {
+			"Syntax": "**.loadAll**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadVSCodeConfig()": {
+			"Syntax": "**.loadVSCodeConfig**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"ServerRegistry": {
 		"clear()": {
 			"Syntax": "**.clear**()",
 			"Params": [],
@@ -814,11 +871,11 @@
 			"Summary": ""
 		},
 		"registerServer()": {
-			"Syntax": "**.registerServer**( *config* : cs.MCP.MCPServerConfig )",
+			"Syntax": "**.registerServer**( *config* : cs.MCP.ServerConfig )",
 			"Params": [
 				[
 					"config",
-					"cs.MCP.MCPServerConfig",
+					"cs.MCP.ServerConfig",
 					"->"
 				]
 			],
@@ -922,7 +979,7 @@
 			"Summary": ""
 		},
 		"getServerConfig()": {
-			"Syntax": "**.getServerConfig**( *name* : Text ) : cs.MCP.MCPServerConfig",
+			"Syntax": "**.getServerConfig**( *name* : Text ) : cs.MCP.ServerConfig",
 			"Params": [
 				[
 					"name",
@@ -931,7 +988,7 @@
 				],
 				[
 					"",
-					"cs.MCP.MCPServerConfig",
+					"cs.MCP.ServerConfig",
 					"<-"
 				]
 			],
@@ -975,9 +1032,9 @@
 			"Summary": ""
 		}
 	},
-	"MCPServerConfig": {
+	"ServerConfig": {
 		"withEnv()": {
-			"Syntax": "**.withEnv**( *key* : Text; *value* : Text ) : cs.MCP.MCPServerConfig",
+			"Syntax": "**.withEnv**( *key* : Text; *value* : Text ) : cs.MCP.ServerConfig",
 			"Params": [
 				[
 					"key",
@@ -991,14 +1048,14 @@
 				],
 				[
 					"",
-					"cs.MCP.MCPServerConfig",
+					"cs.MCP.ServerConfig",
 					"<-"
 				]
 			],
 			"Summary": ""
 		},
 		"addHeaders()": {
-			"Syntax": "**.addHeaders**( *headers* : Object ) : cs.MCP.MCPServerConfig",
+			"Syntax": "**.addHeaders**( *headers* : Object ) : cs.MCP.ServerConfig",
 			"Params": [
 				[
 					"headers",
@@ -1007,14 +1064,14 @@
 				],
 				[
 					"",
-					"cs.MCP.MCPServerConfig",
+					"cs.MCP.ServerConfig",
 					"<-"
 				]
 			],
 			"Summary": ""
 		},
 		"addEnv()": {
-			"Syntax": "**.addEnv**( *key* : Text; *value* : Text ) : cs.MCP.MCPServerConfig",
+			"Syntax": "**.addEnv**( *key* : Text; *value* : Text ) : cs.MCP.ServerConfig",
 			"Params": [
 				[
 					"key",
@@ -1028,14 +1085,14 @@
 				],
 				[
 					"",
-					"cs.MCP.MCPServerConfig",
+					"cs.MCP.ServerConfig",
 					"<-"
 				]
 			],
 			"Summary": ""
 		},
 		"withHeaders()": {
-			"Syntax": "**.withHeaders**( *headers* : Object ) : cs.MCP.MCPServerConfig",
+			"Syntax": "**.withHeaders**( *headers* : Object ) : cs.MCP.ServerConfig",
 			"Params": [
 				[
 					"headers",
@@ -1044,14 +1101,14 @@
 				],
 				[
 					"",
-					"cs.MCP.MCPServerConfig",
+					"cs.MCP.ServerConfig",
 					"<-"
 				]
 			],
 			"Summary": ""
 		},
 		"addHeader()": {
-			"Syntax": "**.addHeader**( *key* : Text; *value* : Text ) : cs.MCP.MCPServerConfig",
+			"Syntax": "**.addHeader**( *key* : Text; *value* : Text ) : cs.MCP.ServerConfig",
 			"Params": [
 				[
 					"key",
@@ -1065,14 +1122,14 @@
 				],
 				[
 					"",
-					"cs.MCP.MCPServerConfig",
+					"cs.MCP.ServerConfig",
 					"<-"
 				]
 			],
 			"Summary": ""
 		},
 		"withHeader()": {
-			"Syntax": "**.withHeader**( *key* : Text; *value* : Text ) : cs.MCP.MCPServerConfig",
+			"Syntax": "**.withHeader**( *key* : Text; *value* : Text ) : cs.MCP.ServerConfig",
 			"Params": [
 				[
 					"key",
@@ -1086,7 +1143,7 @@
 				],
 				[
 					"",
-					"cs.MCP.MCPServerConfig",
+					"cs.MCP.ServerConfig",
 					"<-"
 				]
 			],
@@ -1164,63 +1221,6 @@
 		},
 		"name": {
 			"Syntax": "name : Text"
-		}
-	},
-	"MCPConfigLoader": {
-		"loadVSCodeMcpJson()": {
-			"Syntax": "**.loadVSCodeMcpJson**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"loadClaudeConfig()": {
-			"Syntax": "**.loadClaudeConfig**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"loadVSCodeWorkspaceConfig()": {
-			"Syntax": "**.loadVSCodeWorkspaceConfig**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"loadAll()": {
-			"Syntax": "**.loadAll**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"loadVSCodeConfig()": {
-			"Syntax": "**.loadVSCodeConfig**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
 		}
 	}
 }

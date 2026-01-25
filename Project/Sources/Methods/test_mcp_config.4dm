@@ -7,21 +7,21 @@
 // Test 1: Load and list all discovered servers
 // ==============================================================================
 
-cs:C1710.MCPServerRegistry.me.reload()
+cs:C1710.ServerRegistry.me.reload()
 
-var $serverNames : Collection:=cs:C1710.MCPServerRegistry.me.listServers()
-var $serverCount : Integer:=cs:C1710.MCPServerRegistry.me.count()
+var $serverNames : Collection:=cs:C1710.ServerRegistry.me.listServers()
+var $serverCount : Integer:=cs:C1710.ServerRegistry.me.count()
 
 // ==============================================================================
 // Test 2: Show server details by source
 // ==============================================================================
 
-var $claudeServers : Collection:=cs:C1710.MCPServerRegistry.me.getServersBySource("claude")
-var $vscodeServers : Collection:=cs:C1710.MCPServerRegistry.me.getServersBySource("vscode")
+var $claudeServers : Collection:=cs:C1710.ServerRegistry.me.getServersBySource("claude")
+var $vscodeServers : Collection:=cs:C1710.ServerRegistry.me.getServersBySource("vscode")
 
 // Log server info
-var $config : cs:C1710.MCPServerConfig
-For each ($config; cs:C1710.MCPServerRegistry.me.getAllConfigs())
+var $config : cs:C1710.ServerConfig
+For each ($config; cs:C1710.ServerRegistry.me.getAllConfigs())
 	// Each config has: name, type, command, args, env, url, headers, source
 	// Access via: $config.name, $config.type, $config.command, etc.
 End for each 
@@ -30,7 +30,7 @@ End for each
 // Test 3: Check for load errors
 // ==============================================================================
 
-var $errors : Collection:=cs:C1710.MCPServerRegistry.me.getLoadErrors()
+var $errors : Collection:=cs:C1710.ServerRegistry.me.getLoadErrors()
 // $errors contains any parsing errors from config files
 
 // ==============================================================================
@@ -40,7 +40,7 @@ var $errors : Collection:=cs:C1710.MCPServerRegistry.me.getLoadErrors()
 If ($serverCount>0)
 	// Get first server config
 	var $firstServerName : Text:=$serverNames[0]
-	var $firstConfig : cs:C1710.MCPServerConfig:=cs:C1710.MCPServerRegistry.me.getServerConfig($firstServerName)
+	var $firstConfig : cs:C1710.ServerConfig:=cs:C1710.ServerRegistry.me.getServerConfig($firstServerName)
 	
 	If ($firstConfig.type="stdio") | ($firstConfig.type="")
 		// Create transport without launching
@@ -67,28 +67,28 @@ End if
 // Test 5: Manual server registration
 // ==============================================================================
 
-cs:C1710.MCPServerRegistry.me.registerServerFromObject("my-custom-server"; New object:C1471(\
+cs:C1710.ServerRegistry.me.registerServerFromObject("my-custom-server"; New object:C1471(\
 "type"; "stdio"; \
 "command"; "npx"; \
 "args"; New collection:C1472("-y"; "@modelcontextprotocol/server-filesystem"); \
 "env"; New object:C1471))
 
-ASSERT:C1129(cs:C1710.MCPServerRegistry.me.hasServer("my-custom-server"); "Custom server should be registered")
+ASSERT:C1129(cs:C1710.ServerRegistry.me.hasServer("my-custom-server"); "Custom server should be registered")
 
 // Clean up custom server
-cs:C1710.MCPServerRegistry.me.unregisterServer("my-custom-server")
+cs:C1710.ServerRegistry.me.unregisterServer("my-custom-server")
 
 // ==============================================================================
 // Test 6: Connect to a real server (optional - uncomment to test)
 // ==============================================================================
 
-If (cs:C1710.MCPServerRegistry.me.hasServer("github"))
+If (cs:C1710.ServerRegistry.me.hasServer("github"))
 	
-	$config:=cs:C1710.MCPServerRegistry.me.getServerConfig("github")
+	$config:=cs:C1710.ServerRegistry.me.getServerConfig("github")
 	var $token:=""
 	$config.addHeader("Authorization"; "Bearer "+$token)
 	
-	var $githubClient : cs:C1710.Client:=cs:C1710.MCPServerRegistry.me.getClient("github")
+	var $githubClient : cs:C1710.Client:=cs:C1710.ServerRegistry.me.getClient("github")
 	
 	If ($githubClient#Null:C1517)
 		var $initResult:=$githubClient.initialize()
@@ -99,9 +99,9 @@ If (cs:C1710.MCPServerRegistry.me.hasServer("github"))
 		End if 
 		
 		// Clean up
-		cs:C1710.MCPServerRegistry.me.closeClient("github")
+		cs:C1710.ServerRegistry.me.closeClient("github")
 	End if 
 End if 
 
 // Clean up all clients
-cs:C1710.MCPServerRegistry.me.closeAllClients()
+cs:C1710.ServerRegistry.me.closeAllClients()
