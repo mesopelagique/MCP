@@ -25,20 +25,20 @@ This component requires:
 
 ```4d
 // Create a transport for a local MCP server
-var $transport:=cs.TransportStdIO.new("/opt/homebrew/bin/npx"; "-y"; "@modelcontextprotocol/server-github")
+var $transport:=cs.MCP.TransportStdIO.new("/opt/homebrew/bin/npx"; "-y"; "@modelcontextprotocol/server-github")
 
 // Create client
-var $client:=cs.Client.new($transport)
+var $client:=cs.MCP.Client.new($transport)
 
 // Initialize connection
-var $init : cs.InitializeResult:=$client.initialize()
+var $init : cs.MCP.InitializeResult:=$client.initialize()
 
 If ($init.success)
     // List available tools
-    var $tools : cs.ListToolsResult:=$client.listTools()
+    var $tools : cs.MCP.ListToolsResult:=$client.listTools()
 
     // Call a tool
-    var $result : cs.ToolCallResult:=$client.callTool("search_repositories"; {query: "4d language"})
+    var $result : cs.MCP.ToolCallResult:=$client.callTool("search_repositories"; {query: "4d language"})
 
     // Get text result
     var $text : Text:=$result.text()
@@ -54,26 +54,26 @@ The registry auto-discovers MCP servers from Claude Desktop and VSCode configura
 
 ```4d
 // Load all discovered servers
-cs.ServerRegistry.me.reload()
+cs.MCP.ServerRegistry.me.reload()
 
 // List available servers
-var $servers : Collection:=cs.ServerRegistry.me.listServers()
+var $servers : Collection:=cs.MCP.ServerRegistry.me.listServers()
 
 // Get a client for a specific server
-var $client : cs.Client:=cs.ServerRegistry.me.getClient("github")
+var $client : cs.MCP.Client:=cs.MCP.ServerRegistry.me.getClient("github")
 
 // Use the client...
-var $tools : cs.ListToolsResult:=$client.listTools()
+var $tools : cs.MCP.ListToolsResult:=$client.listTools()
 
 // Close when done
-cs.ServerRegistry.me.closeClient("github")
+cs.MCP.ServerRegistry.me.closeClient("github")
 ```
 
 ### Manual Server Configuration
 
 ```4d
 // Create a stdio server config
-var $config:=cs.ServerConfig.new("my-server"; "stdio")
+var $config:=cs.MCP.ServerConfig.new("my-server"; "stdio")
 $config.command:="/usr/local/bin/my-mcp-server"
 $config.args:=["--option"; "value"]
 $config.env:={API_KEY: "secret"}
@@ -86,10 +86,10 @@ var $client:=$config.createClient()
 
 ```4d
 // Create HTTP transport for remote server
-var $transport:=cs.TransportHttp.new("https://mcp.example.com/xxx")
+var $transport:=cs.MCP.TransportHttp.new("https://mcp.example.com/xxx")
 
 // Create client
-var $client:=cs.Client.new($transport)
+var $client:=cs.MCP.Client.new($transport)
 
 // Initialize and use...
 $client.initialize()
