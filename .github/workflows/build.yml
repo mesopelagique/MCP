@@ -15,5 +15,15 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+    - name: Checkout StdIO
+      uses: actions/checkout@v3
+      with:
+        repository: mesopelagique/StdIO
+        path: Components/StdIO.4dbase
+    - name: Checkout JSONRPC
+      uses: actions/checkout@v3
+      with:
+        repository: mesopelagique/JSONRPC
+        path: Components/JSONRPC.4dbase
     - name: Build
       uses: 4d/build4d-action@main
