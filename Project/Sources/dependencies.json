@@ -1,7 +1,10 @@
 {
 	"version": 2130,
 	"dependencies": {
-		"JSONRPC": {},
-		"StdIO": {}
+		"StdIO": {},
+		"JSONRPC": {
+			"github": "mesopelagique/JSONRPC",
+			"tag": "1.0.0"
+		}
 	}
 }
