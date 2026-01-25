@@ -2,17 +2,36 @@
 // Protocol-only layer - process management delegated to StdIOProcess
 
 property _process : cs:C1710.StdIO.Process
+property _command : Text
+property _options : Object
+property _launched : Boolean
 
 Class extends Transport
 
 Class constructor($command : Text; $options : Object)
 	Super:C1705()
-	
-	// Create and launch the stdio process
+
+	// Store configuration but DON'T launch yet (lazy launch pattern)
+	This:C1470._command:=$command
+	This:C1470._options:=$options
+	This:C1470._launched:=False:C215
+
+	// Create process object without launching
 	This:C1470._process:=cs:C1710.StdIO.Process.new($command; $options)
-	This:C1470._process.launch()
+
+// Ensure process is launched before use (lazy launch)
+Function _ensureLaunched()
+	If (Not:C34(This:C1470._launched))
+		This:C1470._process.launch()
+		This:C1470._launched:=True:C214
+	End if
+
+// Check if process has been launched
+Function get isLaunched : Boolean
+	return This:C1470._launched
 	
 Function send($message : cs:C1710.JSONRPC.Request; $formula : 4D:C1709.Function) : cs:C1710.Result
+	This:C1470._ensureLaunched()
 	var $jsonString : Text:=JSON Stringify:C1217($message)+"\n"
 	
 	// Async mode: use formula callback
@@ -52,9 +71,13 @@ Function _asyncCallback($response : Object; $method : Text; $formula : 4D:C1709.
 	$formula.call(This:C1470; $result)
 	
 Function close()
-	This:C1470._process.kill()
-	
+	If (This:C1470._launched)
+		This:C1470._process.kill()
+		This:C1470._launched:=False:C215
+	End if
+
 Function notify($notification : cs:C1710.JSONRPC.Notification)
+	This:C1470._ensureLaunched()
 	var $jsonString : Text:=JSON Stringify:C1217($notification)+"\n"
 	This:C1470._process.send($jsonString)
 	

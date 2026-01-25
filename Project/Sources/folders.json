@@ -1,4 +1,11 @@
 {
+	"Config": {
+		"classes": [
+			"MCPConfigLoader",
+			"MCPServerConfig",
+			"MCPServerRegistry"
+		]
+	},
 	"Models": {
 		"groups": [
 			"Results"
@@ -22,6 +29,7 @@
 	},
 	"Tests": {
 		"methods": [
+			"test_mcp_config",
 			"test_mcp_http",
 			"test_mcp_http_async",
 			"test_mcp_stdio",

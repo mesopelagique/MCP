@@ -138,6 +138,33 @@
 				"Params": [],
 				"Summary": ""
 			}
+		},
+		"MCPServerRegistry": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"MCPServerConfig": {
+			"new()": {
+				"Syntax": "**.new**( *config* : Object )",
+				"Params": [
+					[
+						"config",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"MCPConfigLoader": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
 		}
 	},
 	"TransportHttp": {
@@ -297,7 +324,18 @@
 			],
 			"Summary": ""
 		},
-		"_inheritedFrom_": "Transport"
+		"_inheritedFrom_": "Transport",
+		"get isLaunched()": {
+			"Syntax": "**.get isLaunched**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
 	},
 	"Transport": {
 		"close()": {
@@ -756,6 +794,433 @@
 		},
 		"result": {
 			"Syntax": "result : cs.MCP.Result"
+		}
+	},
+	"MCPServerRegistry": {
+		"clear()": {
+			"Syntax": "**.clear**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"unregisterServer()": {
+			"Syntax": "**.unregisterServer**( *name* : Text )",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"registerServer()": {
+			"Syntax": "**.registerServer**( *config* : cs.MCP.MCPServerConfig )",
+			"Params": [
+				[
+					"config",
+					"cs.MCP.MCPServerConfig",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"count()": {
+			"Syntax": "**.count**() : Integer",
+			"Params": [
+				[
+					"",
+					"Integer",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"closeClient()": {
+			"Syntax": "**.closeClient**( *name* : Text )",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"getClient()": {
+			"Syntax": "**.getClient**( *name* : Text; *clientInfo* : Object ) : cs.MCP.Client",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"clientInfo",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Client",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getLoadErrors()": {
+			"Syntax": "**.getLoadErrors**() : Collection",
+			"Params": [
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"hasServer()": {
+			"Syntax": "**.hasServer**( *name* : Text ) : Boolean",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"registerServerFromObject()": {
+			"Syntax": "**.registerServerFromObject**( *name* : Text; *configObj* : Object )",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"configObj",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"getAllConfigs()": {
+			"Syntax": "**.getAllConfigs**() : Collection",
+			"Params": [
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getServerConfig()": {
+			"Syntax": "**.getServerConfig**( *name* : Text ) : cs.MCP.MCPServerConfig",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.MCPServerConfig",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"listServers()": {
+			"Syntax": "**.listServers**() : Collection",
+			"Params": [
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"closeAllClients()": {
+			"Syntax": "**.closeAllClients**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"getServersBySource()": {
+			"Syntax": "**.getServersBySource**( *source* : Text ) : Collection",
+			"Params": [
+				[
+					"source",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"reload()": {
+			"Syntax": "**.reload**()",
+			"Params": [],
+			"Summary": ""
+		}
+	},
+	"MCPServerConfig": {
+		"withEnv()": {
+			"Syntax": "**.withEnv**( *key* : Text; *value* : Text ) : cs.MCP.MCPServerConfig",
+			"Params": [
+				[
+					"key",
+					"Text",
+					"->"
+				],
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.MCPServerConfig",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addHeaders()": {
+			"Syntax": "**.addHeaders**( *headers* : Object ) : cs.MCP.MCPServerConfig",
+			"Params": [
+				[
+					"headers",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.MCPServerConfig",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addEnv()": {
+			"Syntax": "**.addEnv**( *key* : Text; *value* : Text ) : cs.MCP.MCPServerConfig",
+			"Params": [
+				[
+					"key",
+					"Text",
+					"->"
+				],
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.MCPServerConfig",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"withHeaders()": {
+			"Syntax": "**.withHeaders**( *headers* : Object ) : cs.MCP.MCPServerConfig",
+			"Params": [
+				[
+					"headers",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.MCPServerConfig",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addHeader()": {
+			"Syntax": "**.addHeader**( *key* : Text; *value* : Text ) : cs.MCP.MCPServerConfig",
+			"Params": [
+				[
+					"key",
+					"Text",
+					"->"
+				],
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.MCPServerConfig",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"withHeader()": {
+			"Syntax": "**.withHeader**( *key* : Text; *value* : Text ) : cs.MCP.MCPServerConfig",
+			"Params": [
+				[
+					"key",
+					"Text",
+					"->"
+				],
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.MCPServerConfig",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"createTransport()": {
+			"Syntax": "**.createTransport**() : cs.MCP.Transport",
+			"Params": [
+				[
+					"",
+					"cs.MCP.Transport",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"toObject()": {
+			"Syntax": "**.toObject**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isValid()": {
+			"Syntax": "**.isValid**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"createClient()": {
+			"Syntax": "**.createClient**( *clientInfo* : Object ) : cs.MCP.Client",
+			"Params": [
+				[
+					"clientInfo",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Client",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"headers": {
+			"Syntax": "headers : Object"
+		},
+		"command": {
+			"Syntax": "command : Text"
+		},
+		"args": {
+			"Syntax": "args : Collection"
+		},
+		"type": {
+			"Syntax": "type : Text"
+		},
+		"url": {
+			"Syntax": "url : Text"
+		},
+		"env": {
+			"Syntax": "env : Object"
+		},
+		"source": {
+			"Syntax": "source : Text"
+		},
+		"name": {
+			"Syntax": "name : Text"
+		}
+	},
+	"MCPConfigLoader": {
+		"loadVSCodeMcpJson()": {
+			"Syntax": "**.loadVSCodeMcpJson**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadClaudeConfig()": {
+			"Syntax": "**.loadClaudeConfig**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadVSCodeWorkspaceConfig()": {
+			"Syntax": "**.loadVSCodeWorkspaceConfig**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadAll()": {
+			"Syntax": "**.loadAll**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadVSCodeConfig()": {
+			"Syntax": "**.loadVSCodeConfig**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
 		}
 	}
 }
