@@ -1,15 +1,17 @@
 {
 	"_method_": {},
 	"cs.MCP": {
-		"TransportHttp": {
+		"ListPromptsResult": {
 			"new()": {
-				"Syntax": "**.new**( *url* : Text; *options* : Object )",
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"jwt": {
+			"new()": {
+				"Syntax": "**.new**( *options* : Object )",
 				"Params": [
-					[
-						"url",
-						"Text",
-						"->"
-					],
 					[
 						"options",
 						"Object",
@@ -19,14 +21,14 @@
 				"Summary": ""
 			}
 		},
-		"ListPromptsResult": {
+		"ReadResourceResult": {
 			"new()": {
 				"Syntax": "**.new**()",
 				"Params": [],
 				"Summary": ""
 			}
 		},
-		"Result": {
+		"_MCPDemoHandler": {
 			"new()": {
 				"Syntax": "**.new**()",
 				"Params": [],
@@ -40,7 +42,28 @@
 				"Summary": ""
 			}
 		},
-		"ReadResourceResult": {
+		"OAuth": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"ToolCallResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"Result": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"_DemoTools": {
 			"new()": {
 				"Syntax": "**.new**()",
 				"Params": [],
@@ -65,6 +88,59 @@
 				"Summary": ""
 			}
 		},
+		"TransportHttp": {
+			"new()": {
+				"Syntax": "**.new**( *url* : Text; *options* : Object )",
+				"Params": [
+					[
+						"url",
+						"Text",
+						"->"
+					],
+					[
+						"options",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"_Env": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"ListResourcesResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"ServerRegistry": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"ConfigLoader": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"_MCPTestSignal": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
 		"Transport": {
 			"new()": {
 				"Syntax": "**.new**()",
@@ -79,7 +155,27 @@
 				"Summary": ""
 			}
 		},
-		"_Env": {
+		"ListToolsResult": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"Server": {
+			"new()": {
+				"Syntax": "**.new**( *descriptor* : Object )",
+				"Params": [
+					[
+						"descriptor",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"ListResourceTemplatesResult": {
 			"new()": {
 				"Syntax": "**.new**()",
 				"Params": [],
@@ -104,55 +200,6 @@
 				"Summary": ""
 			}
 		},
-		"ListResourcesResult": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
-				"Summary": ""
-			}
-		},
-		"ToolCallResult": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
-				"Summary": ""
-			}
-		},
-		"ListResourceTemplatesResult": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
-				"Summary": ""
-			}
-		},
-		"ListToolsResult": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
-				"Summary": ""
-			}
-		},
-		"_MCPTestSignal": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
-				"Summary": ""
-			}
-		},
-		"ConfigLoader": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
-				"Summary": ""
-			}
-		},
-		"ServerRegistry": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
-				"Summary": ""
-			}
-		},
 		"ServerConfig": {
 			"new()": {
 				"Syntax": "**.new**( *config* : Object )",
@@ -165,34 +212,447 @@
 				],
 				"Summary": ""
 			}
-		},
-		"_DemoTools": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
-				"Summary": ""
-			}
-		},
-		"MCPHandler": {
-			"new()": {
-				"Syntax": "**.new**()",
-				"Params": [],
-				"Summary": ""
-			}
-		},
-		"Server": {
-			"new()": {
-				"Syntax": "**.new**( *descriptor* : Object )",
-				"Params": [
-					[
-						"descriptor",
-						"Object",
-						"->"
-					]
-				],
-				"Summary": ""
-			}
 		}
+	},
+	"ListPromptsResult": {
+		"prompts": {
+			"Syntax": "prompts : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"jwt": {
+		"HMAC()": {
+			"Syntax": "**.HMAC**( *keyVar* : Variant; *messageVar* : Variant; *algoName* : Text ) : Text",
+			"Params": [
+				[
+					"keyVar",
+					"Variant",
+					"->"
+				],
+				[
+					"messageVar",
+					"Variant",
+					"->"
+				],
+				[
+					"algoName",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"verify()": {
+			"Syntax": "**.verify**( *token* : Text; *options* : Object ) : Object",
+			"Params": [
+				[
+					"token",
+					"Text",
+					"->"
+				],
+				[
+					"options",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"sign()": {
+			"Syntax": "**.sign**( *headerObject* : Object; *payloadObject* : Object; *options* : Object ) : Text",
+			"Params": [
+				[
+					"headerObject",
+					"Object",
+					"->"
+				],
+				[
+					"payloadObject",
+					"Object",
+					"->"
+				],
+				[
+					"options",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"secret": {
+			"Syntax": "secret : Text"
+		},
+		"key": {
+			"Syntax": "key : 4D.CryptoKey"
+		}
+	},
+	"Tool": {
+		"inputSchema": {
+			"Syntax": "inputSchema : Variant"
+		},
+		"description": {
+			"Syntax": "description : Text"
+		},
+		"name": {
+			"Syntax": "name : Text"
+		}
+	},
+	"ReadResourceResult": {
+		"blob()": {
+			"Syntax": "**.blob**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"text()": {
+			"Syntax": "**.text**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"contents": {
+			"Syntax": "contents : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"_MCPDemoHandler": {
+		"handle()": {
+			"Syntax": "**.handle**( *request* : 4D.IncomingMessage ) : 4D.OutgoingMessage",
+			"Params": [
+				[
+					"request",
+					"4D.IncomingMessage",
+					"->"
+				],
+				[
+					"",
+					"4D.OutgoingMessage",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"unregister()": {
+			"Syntax": "**.unregister**( *path* : Text )",
+			"Params": [
+				[
+					"path",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"register()": {
+			"Syntax": "**.register**( *path* : Text; *descriptor* : Object )",
+			"Params": [
+				[
+					"path",
+					"Text",
+					"->"
+				],
+				[
+					"descriptor",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"InitializeResult": {
+		"capabilities": {
+			"Syntax": "capabilities : Object"
+		},
+		"protocolVersion": {
+			"Syntax": "protocolVersion : Text"
+		},
+		"serverInfo": {
+			"Syntax": "serverInfo : Object"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"OAuth": {
+		"wellKnownResource()": {
+			"Syntax": "**.wellKnownResource**( *request* : 4D.IncomingMessage ) : 4D.OutgoingMessage",
+			"Params": [
+				[
+					"request",
+					"4D.IncomingMessage",
+					"->"
+				],
+				[
+					"",
+					"4D.OutgoingMessage",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"challenge()": {
+			"Syntax": "**.challenge**( *request* : 4D.IncomingMessage; *response* : 4D.OutgoingMessage ) : 4D.OutgoingMessage",
+			"Params": [
+				[
+					"request",
+					"4D.IncomingMessage",
+					"->"
+				],
+				[
+					"response",
+					"4D.OutgoingMessage",
+					"->"
+				],
+				[
+					"",
+					"4D.OutgoingMessage",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"authorize()": {
+			"Syntax": "**.authorize**( *request* : 4D.IncomingMessage ) : 4D.OutgoingMessage",
+			"Params": [
+				[
+					"request",
+					"4D.IncomingMessage",
+					"->"
+				],
+				[
+					"",
+					"4D.OutgoingMessage",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"validateBearer()": {
+			"Syntax": "**.validateBearer**( *request* : 4D.IncomingMessage ) : Object",
+			"Params": [
+				[
+					"request",
+					"4D.IncomingMessage",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"token()": {
+			"Syntax": "**.token**( *request* : 4D.IncomingMessage ) : 4D.OutgoingMessage",
+			"Params": [
+				[
+					"request",
+					"4D.IncomingMessage",
+					"->"
+				],
+				[
+					"",
+					"4D.OutgoingMessage",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"register()": {
+			"Syntax": "**.register**( *request* : 4D.IncomingMessage ) : 4D.OutgoingMessage",
+			"Params": [
+				[
+					"request",
+					"4D.IncomingMessage",
+					"->"
+				],
+				[
+					"",
+					"4D.OutgoingMessage",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"wellKnownAuthServer()": {
+			"Syntax": "**.wellKnownAuthServer**( *request* : 4D.IncomingMessage ) : 4D.OutgoingMessage",
+			"Params": [
+				[
+					"request",
+					"4D.IncomingMessage",
+					"->"
+				],
+				[
+					"",
+					"4D.OutgoingMessage",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"configure()": {
+			"Syntax": "**.configure**( *options* : Object )",
+			"Params": [
+				[
+					"options",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"ToolCallResult": {
+		"data()": {
+			"Syntax": "**.data**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"text()": {
+			"Syntax": "**.text**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isError": {
+			"Syntax": "isError : Boolean"
+		},
+		"content": {
+			"Syntax": "content : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"Result": {
+		"error": {
+			"Syntax": "error : Object"
+		},
+		"rawResponse": {
+			"Syntax": "rawResponse : Object"
+		},
+		"success": {
+			"Syntax": "success : Boolean"
+		}
+	},
+	"_DemoTools": {
+		"add()": {
+			"Syntax": "**.add**( *args* : Object ) : Object",
+			"Params": [
+				[
+					"args",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"echo()": {
+			"Syntax": "**.echo**( *args* : Object ) : Text",
+			"Params": [
+				[
+					"args",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"TransportStdIO": {
+		"close()": {
+			"Syntax": "**.close**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"send()": {
+			"Syntax": "**.send**( *message* : cs.JSONRPC.Request; *formula* : 4D.Function ) : cs.MCP.Result",
+			"Params": [
+				[
+					"message",
+					"cs.JSONRPC.Request",
+					"->"
+				],
+				[
+					"formula",
+					"4D.Function",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Result",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"get isLaunched()": {
+			"Syntax": "**.get isLaunched**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"notify()": {
+			"Syntax": "**.notify**( *notification* : cs.JSONRPC.Notification )",
+			"Params": [
+				[
+					"notification",
+					"cs.JSONRPC.Notification",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"_inheritedFrom_": "Transport"
 	},
 	"TransportHttp": {
 		"get protocolVersion()": {
@@ -256,105 +716,103 @@
 		},
 		"_inheritedFrom_": "Transport"
 	},
-	"ListPromptsResult": {
-		"prompts": {
-			"Syntax": "prompts : Collection"
+	"_Env": {},
+	"ListResourcesResult": {
+		"resources": {
+			"Syntax": "resources : Collection"
 		},
 		"_inheritedFrom_": "Result"
 	},
-	"Result": {
-		"error": {
-			"Syntax": "error : Object"
-		},
-		"rawResponse": {
-			"Syntax": "rawResponse : Object"
-		},
-		"success": {
-			"Syntax": "success : Boolean"
-		}
-	},
-	"InitializeResult": {
-		"capabilities": {
-			"Syntax": "capabilities : Object"
-		},
-		"protocolVersion": {
-			"Syntax": "protocolVersion : Text"
-		},
-		"serverInfo": {
-			"Syntax": "serverInfo : Object"
-		},
-		"_inheritedFrom_": "Result"
-	},
-	"ReadResourceResult": {
-		"blob()": {
-			"Syntax": "**.blob**() : Text",
-			"Params": [
-				[
-					"",
-					"Text",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"text()": {
-			"Syntax": "**.text**() : Text",
-			"Params": [
-				[
-					"",
-					"Text",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"contents": {
-			"Syntax": "contents : Collection"
-		},
-		"_inheritedFrom_": "Result"
-	},
-	"TransportStdIO": {
-		"notify()": {
-			"Syntax": "**.notify**( *notification* : cs.JSONRPC.Notification )",
-			"Params": [
-				[
-					"notification",
-					"cs.JSONRPC.Notification",
-					"->"
-				]
-			],
-			"Summary": ""
-		},
-		"close()": {
-			"Syntax": "**.close**()",
+	"ServerRegistry": {
+		"clear()": {
+			"Syntax": "**.clear**()",
 			"Params": [],
 			"Summary": ""
 		},
-		"send()": {
-			"Syntax": "**.send**( *message* : cs.JSONRPC.Request; *formula* : 4D.Function ) : cs.MCP.Result",
+		"unregisterServer()": {
+			"Syntax": "**.unregisterServer**( *name* : Text )",
 			"Params": [
 				[
-					"message",
-					"cs.JSONRPC.Request",
+					"name",
+					"Text",
 					"->"
-				],
+				]
+			],
+			"Summary": ""
+		},
+		"registerServer()": {
+			"Syntax": "**.registerServer**( *config* : cs.MCP.ServerConfig )",
+			"Params": [
 				[
-					"formula",
-					"4D.Function",
+					"config",
+					"cs.MCP.ServerConfig",
 					"->"
-				],
+				]
+			],
+			"Summary": ""
+		},
+		"count()": {
+			"Syntax": "**.count**() : Integer",
+			"Params": [
 				[
 					"",
-					"cs.MCP.Result",
+					"Integer",
 					"<-"
 				]
 			],
 			"Summary": ""
 		},
-		"_inheritedFrom_": "Transport",
-		"get isLaunched()": {
-			"Syntax": "**.get isLaunched**() : Boolean",
+		"closeClient()": {
+			"Syntax": "**.closeClient**( *name* : Text )",
 			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"getClient()": {
+			"Syntax": "**.getClient**( *name* : Text; *clientInfo* : Object ) : cs.MCP.Client",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"clientInfo",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.Client",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getLoadErrors()": {
+			"Syntax": "**.getLoadErrors**() : Collection",
+			"Params": [
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"hasServer()": {
+			"Syntax": "**.hasServer**( *name* : Text ) : Boolean",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
 				[
 					"",
 					"Boolean",
@@ -362,6 +820,183 @@
 				]
 			],
 			"Summary": ""
+		},
+		"registerServerFromObject()": {
+			"Syntax": "**.registerServerFromObject**( *name* : Text; *configObj* : Object )",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"configObj",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"getAllConfigs()": {
+			"Syntax": "**.getAllConfigs**() : Collection",
+			"Params": [
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getServerConfig()": {
+			"Syntax": "**.getServerConfig**( *name* : Text ) : cs.MCP.ServerConfig",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.MCP.ServerConfig",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"listServers()": {
+			"Syntax": "**.listServers**() : Collection",
+			"Params": [
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"closeAllClients()": {
+			"Syntax": "**.closeAllClients**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"getServersBySource()": {
+			"Syntax": "**.getServersBySource**( *source* : Text ) : Collection",
+			"Params": [
+				[
+					"source",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"reload()": {
+			"Syntax": "**.reload**()",
+			"Params": [],
+			"Summary": ""
+		}
+	},
+	"ConfigLoader": {
+		"loadVSCodeMcpJson()": {
+			"Syntax": "**.loadVSCodeMcpJson**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadClaudeConfig()": {
+			"Syntax": "**.loadClaudeConfig**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadVSCodeWorkspaceConfig()": {
+			"Syntax": "**.loadVSCodeWorkspaceConfig**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadAll()": {
+			"Syntax": "**.loadAll**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"loadVSCodeConfig()": {
+			"Syntax": "**.loadVSCodeConfig**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"_MCPTestSignal": {
+		"trigger()": {
+			"Syntax": "**.trigger**( *result* : cs.MCP.Result )",
+			"Params": [
+				[
+					"result",
+					"cs.MCP.Result",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"wait()": {
+			"Syntax": "**.wait**( *time* : Integer )",
+			"Params": [
+				[
+					"time",
+					"Integer",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"reset()": {
+			"Syntax": "**.reset**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"init()": {
+			"Syntax": "**.init**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"signal": {
+			"Syntax": "signal : 4D.Signal"
+		},
+		"result": {
+			"Syntax": "result : cs.MCP.Result"
 		}
 	},
 	"Transport": {
@@ -412,7 +1047,45 @@
 		},
 		"_inheritedFrom_": "Result"
 	},
-	"_Env": {},
+	"ListToolsResult": {
+		"tools": {
+			"Syntax": "tools : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"Server": {
+		"handleMessage()": {
+			"Syntax": "**.handleMessage**( *raw* : Variant ) : Text",
+			"Params": [
+				[
+					"raw",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"toolsClass": {
+			"Syntax": "toolsClass : Text"
+		},
+		"tools": {
+			"Syntax": "tools : Variant"
+		},
+		"info": {
+			"Syntax": "info : Object"
+		}
+	},
+	"ListResourceTemplatesResult": {
+		"resourceTemplates": {
+			"Syntax": "resourceTemplates : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
 	"Client": {
 		"close()": {
 			"Syntax": "**.close**()",
@@ -723,342 +1396,6 @@
 			"Syntax": "transport : cs.MCP.Transport"
 		}
 	},
-	"ListResourcesResult": {
-		"resources": {
-			"Syntax": "resources : Collection"
-		},
-		"_inheritedFrom_": "Result"
-	},
-	"Tool": {
-		"inputSchema": {
-			"Syntax": "inputSchema : Variant"
-		},
-		"description": {
-			"Syntax": "description : Text"
-		},
-		"name": {
-			"Syntax": "name : Text"
-		}
-	},
-	"ToolCallResult": {
-		"data()": {
-			"Syntax": "**.data**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"text()": {
-			"Syntax": "**.text**() : Text",
-			"Params": [
-				[
-					"",
-					"Text",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"isError": {
-			"Syntax": "isError : Boolean"
-		},
-		"content": {
-			"Syntax": "content : Collection"
-		},
-		"_inheritedFrom_": "Result"
-	},
-	"ListResourceTemplatesResult": {
-		"resourceTemplates": {
-			"Syntax": "resourceTemplates : Collection"
-		},
-		"_inheritedFrom_": "Result"
-	},
-	"ListToolsResult": {
-		"tools": {
-			"Syntax": "tools : Collection"
-		},
-		"_inheritedFrom_": "Result"
-	},
-	"_MCPTestSignal": {
-		"trigger()": {
-			"Syntax": "**.trigger**( *result* : cs.MCP.Result )",
-			"Params": [
-				[
-					"result",
-					"cs.MCP.Result",
-					"->"
-				]
-			],
-			"Summary": ""
-		},
-		"wait()": {
-			"Syntax": "**.wait**( *time* : Integer )",
-			"Params": [
-				[
-					"time",
-					"Integer",
-					"->"
-				]
-			],
-			"Summary": ""
-		},
-		"reset()": {
-			"Syntax": "**.reset**()",
-			"Params": [],
-			"Summary": ""
-		},
-		"init()": {
-			"Syntax": "**.init**()",
-			"Params": [],
-			"Summary": ""
-		},
-		"signal": {
-			"Syntax": "signal : 4D.Signal"
-		},
-		"result": {
-			"Syntax": "result : cs.MCP.Result"
-		}
-	},
-	"ConfigLoader": {
-		"loadVSCodeMcpJson()": {
-			"Syntax": "**.loadVSCodeMcpJson**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"loadClaudeConfig()": {
-			"Syntax": "**.loadClaudeConfig**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"loadVSCodeWorkspaceConfig()": {
-			"Syntax": "**.loadVSCodeWorkspaceConfig**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"loadAll()": {
-			"Syntax": "**.loadAll**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"loadVSCodeConfig()": {
-			"Syntax": "**.loadVSCodeConfig**() : Object",
-			"Params": [
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		}
-	},
-	"ServerRegistry": {
-		"clear()": {
-			"Syntax": "**.clear**()",
-			"Params": [],
-			"Summary": ""
-		},
-		"unregisterServer()": {
-			"Syntax": "**.unregisterServer**( *name* : Text )",
-			"Params": [
-				[
-					"name",
-					"Text",
-					"->"
-				]
-			],
-			"Summary": ""
-		},
-		"registerServer()": {
-			"Syntax": "**.registerServer**( *config* : cs.MCP.ServerConfig )",
-			"Params": [
-				[
-					"config",
-					"cs.MCP.ServerConfig",
-					"->"
-				]
-			],
-			"Summary": ""
-		},
-		"count()": {
-			"Syntax": "**.count**() : Integer",
-			"Params": [
-				[
-					"",
-					"Integer",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"closeClient()": {
-			"Syntax": "**.closeClient**( *name* : Text )",
-			"Params": [
-				[
-					"name",
-					"Text",
-					"->"
-				]
-			],
-			"Summary": ""
-		},
-		"getClient()": {
-			"Syntax": "**.getClient**( *name* : Text; *clientInfo* : Object ) : cs.MCP.Client",
-			"Params": [
-				[
-					"name",
-					"Text",
-					"->"
-				],
-				[
-					"clientInfo",
-					"Object",
-					"->"
-				],
-				[
-					"",
-					"cs.MCP.Client",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"getLoadErrors()": {
-			"Syntax": "**.getLoadErrors**() : Collection",
-			"Params": [
-				[
-					"",
-					"Collection",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"hasServer()": {
-			"Syntax": "**.hasServer**( *name* : Text ) : Boolean",
-			"Params": [
-				[
-					"name",
-					"Text",
-					"->"
-				],
-				[
-					"",
-					"Boolean",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"registerServerFromObject()": {
-			"Syntax": "**.registerServerFromObject**( *name* : Text; *configObj* : Object )",
-			"Params": [
-				[
-					"name",
-					"Text",
-					"->"
-				],
-				[
-					"configObj",
-					"Object",
-					"->"
-				]
-			],
-			"Summary": ""
-		},
-		"getAllConfigs()": {
-			"Syntax": "**.getAllConfigs**() : Collection",
-			"Params": [
-				[
-					"",
-					"Collection",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"getServerConfig()": {
-			"Syntax": "**.getServerConfig**( *name* : Text ) : cs.MCP.ServerConfig",
-			"Params": [
-				[
-					"name",
-					"Text",
-					"->"
-				],
-				[
-					"",
-					"cs.MCP.ServerConfig",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"listServers()": {
-			"Syntax": "**.listServers**() : Collection",
-			"Params": [
-				[
-					"",
-					"Collection",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"closeAllClients()": {
-			"Syntax": "**.closeAllClients**()",
-			"Params": [],
-			"Summary": ""
-		},
-		"getServersBySource()": {
-			"Syntax": "**.getServersBySource**( *source* : Text ) : Collection",
-			"Params": [
-				[
-					"source",
-					"Text",
-					"->"
-				],
-				[
-					"",
-					"Collection",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"reload()": {
-			"Syntax": "**.reload**()",
-			"Params": [],
-			"Summary": ""
-		}
-	},
 	"ServerConfig": {
 		"withEnv()": {
 			"Syntax": "**.withEnv**( *key* : Text; *value* : Text ) : cs.MCP.ServerConfig",
@@ -1248,112 +1585,6 @@
 		},
 		"name": {
 			"Syntax": "name : Text"
-		}
-	},
-	"_DemoTools": {
-		"add()": {
-			"Syntax": "**.add**( *args* : Object ) : Object",
-			"Params": [
-				[
-					"args",
-					"Object",
-					"->"
-				],
-				[
-					"",
-					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"echo()": {
-			"Syntax": "**.echo**( *args* : Object ) : Text",
-			"Params": [
-				[
-					"args",
-					"Object",
-					"->"
-				],
-				[
-					"",
-					"Text",
-					"<-"
-				]
-			],
-			"Summary": ""
-		}
-	},
-	"MCPHandler": {
-		"handle()": {
-			"Syntax": "**.handle**( *request* : 4D.IncomingMessage ) : 4D.OutgoingMessage",
-			"Params": [
-				[
-					"request",
-					"4D.IncomingMessage",
-					"->"
-				],
-				[
-					"",
-					"4D.OutgoingMessage",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"unregister()": {
-			"Syntax": "**.unregister**( *path* : Text )",
-			"Params": [
-				[
-					"path",
-					"Text",
-					"->"
-				]
-			],
-			"Summary": ""
-		},
-		"register()": {
-			"Syntax": "**.register**( *path* : Text; *descriptor* : Object )",
-			"Params": [
-				[
-					"path",
-					"Text",
-					"->"
-				],
-				[
-					"descriptor",
-					"Object",
-					"->"
-				]
-			],
-			"Summary": ""
-		}
-	},
-	"Server": {
-		"handleMessage()": {
-			"Syntax": "**.handleMessage**( *raw* : Variant ) : Text",
-			"Params": [
-				[
-					"raw",
-					"Variant",
-					"->"
-				],
-				[
-					"",
-					"Text",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"toolsClass": {
-			"Syntax": "toolsClass : Text"
-		},
-		"tools": {
-			"Syntax": "tools : Variant"
-		},
-		"info": {
-			"Syntax": "info : Object"
 		}
 	}
 }

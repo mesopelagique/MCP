@@ -58,9 +58,19 @@ Function handle($request : 4D:C1709.IncomingMessage) : 4D:C1709.OutgoingMessage
 		$response.setStatus(404)
 		$response.setBody("No MCP server registered at "+$path)
 		return $response
-	End if 
-	
-	Case of 
+	End if
+
+	// Optional bearer-token gate (descriptor.requireAuth). Returns the OAuth
+	// discovery 401 when the token is missing/invalid; see cs.OAuth.
+	If ($descriptor.requireAuth=True:C214)
+		var $auth : Object:=cs:C1710.OAuth.me.validateBearer($request)
+		If (Not:C34($auth.success))
+			return cs:C1710.OAuth.me.challenge($request; $response)
+		End if
+		// $auth.claims holds sub/scope/aud — map to 4D privileges here if needed.
+	End if
+
+	Case of
 			// Session teardown - nothing stateful to clean up in the minimal server
 		: ($request.verb="delete")
 			$response.setStatus(200)

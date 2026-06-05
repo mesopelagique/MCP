@@ -4,5 +4,35 @@
 		"method": "handle",
 		"regexPattern": "/mcp/.*",
 		"verbs": "post, get, delete"
+	},
+	{
+		"class": "OAuth",
+		"method": "wellKnownResource",
+		"regexPattern": "/.well-known/oauth-protected-resource.*",
+		"verbs": "get"
+	},
+	{
+		"class": "OAuth",
+		"method": "wellKnownAuthServer",
+		"regexPattern": "/.well-known/oauth-authorization-server.*",
+		"verbs": "get"
+	},
+	{
+		"class": "OAuth",
+		"method": "authorize",
+		"regexPattern": "/oauth/authorize",
+		"verbs": "get, post"
+	},
+	{
+		"class": "OAuth",
+		"method": "token",
+		"regexPattern": "/oauth/token",
+		"verbs": "post"
+	},
+	{
+		"class": "OAuth",
+		"method": "register",
+		"regexPattern": "/oauth/register",
+		"verbs": "post"
 	}
 ]
