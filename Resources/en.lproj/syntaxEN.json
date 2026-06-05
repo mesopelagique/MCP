@@ -165,6 +165,33 @@
 				],
 				"Summary": ""
 			}
+		},
+		"_DemoTools": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"MCPHandler": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"Server": {
+			"new()": {
+				"Syntax": "**.new**( *descriptor* : Object )",
+				"Params": [
+					[
+						"descriptor",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
 		}
 	},
 	"TransportHttp": {
@@ -1221,6 +1248,112 @@
 		},
 		"name": {
 			"Syntax": "name : Text"
+		}
+	},
+	"_DemoTools": {
+		"add()": {
+			"Syntax": "**.add**( *args* : Object ) : Object",
+			"Params": [
+				[
+					"args",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"echo()": {
+			"Syntax": "**.echo**( *args* : Object ) : Text",
+			"Params": [
+				[
+					"args",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"MCPHandler": {
+		"handle()": {
+			"Syntax": "**.handle**( *request* : 4D.IncomingMessage ) : 4D.OutgoingMessage",
+			"Params": [
+				[
+					"request",
+					"4D.IncomingMessage",
+					"->"
+				],
+				[
+					"",
+					"4D.OutgoingMessage",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"unregister()": {
+			"Syntax": "**.unregister**( *path* : Text )",
+			"Params": [
+				[
+					"path",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"register()": {
+			"Syntax": "**.register**( *path* : Text; *descriptor* : Object )",
+			"Params": [
+				[
+					"path",
+					"Text",
+					"->"
+				],
+				[
+					"descriptor",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"Server": {
+		"handleMessage()": {
+			"Syntax": "**.handleMessage**( *raw* : Variant ) : Text",
+			"Params": [
+				[
+					"raw",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"toolsClass": {
+			"Syntax": "toolsClass : Text"
+		},
+		"tools": {
+			"Syntax": "tools : Variant"
+		},
+		"info": {
+			"Syntax": "info : Object"
 		}
 	}
 }

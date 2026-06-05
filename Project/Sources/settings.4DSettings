@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><preferences stamp="5">
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="6">
 	<com.4d>
 		<compiler>
 			<options syntax_file="true" target="all"/>
 		</compiler>
 		<general component_classStore_name="MCP"/>
+		<web>
+			<standalone_server>
+				<configuration publish_at_startup="true"/>
+			</standalone_server>
+		</web>
 	</com.4d>
 </preferences>

@@ -1,0 +1,8 @@
+[
+	{
+		"class": "_MCPDemoHandler",
+		"method": "handle",
+		"regexPattern": "/mcp/.*",
+		"verbs": "post, get, delete"
+	}
+]

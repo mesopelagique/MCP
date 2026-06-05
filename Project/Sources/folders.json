@@ -32,6 +32,7 @@
 			"test_mcp_config",
 			"test_mcp_http",
 			"test_mcp_http_async",
+			"test_mcp_server",
 			"test_mcp_stdio",
 			"test_mcp_stdio_async"
 		],
@@ -51,5 +52,14 @@
 			"_Env"
 		]
 	},
-	"trash": {}
+	"trash": {},
+	"Demo": {
+		"methods": [
+			"_onStartUp"
+		],
+		"classes": [
+			"_DemoTools",
+			"_MCPDemoHandler"
+		]
+	}
 }

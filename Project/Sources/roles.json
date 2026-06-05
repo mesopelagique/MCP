@@ -1,27 +1,7 @@
 {
-	"privileges": [
-		{
-			"privilege": "none",
-			"includes": []
-		}
-	],
-	
+	"privileges": [],
 	"roles": [],
-	
 	"permissions": {
-		"allowed": [
-			{
-				"applyTo":"ds",
-				"type": "datastore",
-				"read": ["none"],
-				"create": ["none"],
-				"update": ["none"],
-				"drop": ["none"],
-				"execute": ["none"],
-				"promote": ["none"]
-			}
-		]
-	},
-
-	"forceLogin": true
+		"allowed": []
+	}
 }
